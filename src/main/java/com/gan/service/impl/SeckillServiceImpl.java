@@ -113,6 +113,7 @@ public class SeckillServiceImpl implements ISeckillService {
                     throw new SeckillCloseException("Seckill is closed");
                 }else{
                     SuccessKilled successKilled=successKilledDao.queryByIdWithSeckill(seckillId,userPhone);
+
                     return new SeckillExecution(seckillId, SeckillStatEnum.SUCCESS,successKilled);
 
                 }
