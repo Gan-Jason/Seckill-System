@@ -6,5 +6,8 @@
 
 
 * 流程图
-![](https://github.com/Gan-Jason/Seckill-System/blob/master/system-architecture.png?raw=true)
+![](https://github.com/Gan-Jason/Seckill-System/blob/master/system-architecture.png?raw=true)  
+
+* RESTful接口  
+![](https://github.com/Gan-Jason/Seckill-System/blob/master/RESTful.png?raw=true)
 
