@@ -11,3 +11,5 @@
 * RESTful接口  
 ![](https://github.com/Gan-Jason/Seckill-System/blob/master/RESTful.png?raw=true)
 
+* 分布式架构方案
+![](https://github.com/Gan-Jason/Seckill-System/blob/master/distributed.png?raw=true)
