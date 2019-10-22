@@ -4,5 +4,6 @@
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources/mybatis-config.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/sql" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resource" charset="GBK" />
   </component>
 </project>

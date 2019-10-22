@@ -67,4 +67,7 @@ public class SeckillServiceImplTest {
             logger.warn("秒杀未开始：{}",exposer);
         }
     }
+
+
+
 }

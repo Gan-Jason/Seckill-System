@@ -44,7 +44,7 @@ public class SeckillServiceImpl implements ISeckillService {
 
     @Override
     public List<Seckill> getSeckillList() {
-        return seckillDao.queryAll(0,3);
+        return seckillDao.queryAll(0,4);
     }
 
     @Override
@@ -92,11 +92,6 @@ public class SeckillServiceImpl implements ISeckillService {
      * @return com.gan.dto.SeckillExecution
      *
      *
-     *
-     * 使用注解控制事务方法的优点：
-     * 1.开发团队达成一致约定，明确标注事务方法的编程风格
-     * 2. 保证事务方法的执行时间尽可能短，不要穿插其他网络操作例如RPC/HTTP请求或者剥离到事务方法外部
-     * 3.
      */
 
     public SeckillExecution executeSeckill(long seckillId, long userPhone, String md5) throws SeckillException,
