@@ -13,3 +13,35 @@
 
 * 分布式架构方案
 ![](https://github.com/Gan-Jason/Seckill-System/blob/master/distributed.png?raw=true)
+
+
+* 项目源码结构  
+├─main
+│  ├─java
+│  │  └─com
+│  │      └─gan
+│  │          ├─dao
+│  │          ├─dto
+│  │          ├─entity
+│  │          ├─enums
+│  │          ├─exception
+│  │          ├─service
+│  │          │  └─impl
+│  │          └─web
+│  ├─resources
+│  │  ├─mapper
+│  │  └─spring
+│  ├─sql
+│  └─webapp
+│      ├─resource
+│      │  └─script
+│      └─WEB-INF
+│          └─jsp
+│              └─common
+└─test
+    └─java
+        └─com
+            └─gan
+                ├─dao
+                └─service
+                    └─impl
