@@ -2,6 +2,7 @@ package com.gan.service.impl;
 
 import com.gan.dao.SeckillDao;
 import com.gan.dao.SuccessKilledDao;
+import com.gan.dao.cache.RedisDao;
 import com.gan.dto.Exposer;
 import com.gan.dto.SeckillExecution;
 import com.gan.entity.Seckill;
@@ -41,6 +42,8 @@ public class SeckillServiceImpl implements ISeckillService {
     @Autowired
     private SuccessKilledDao successKilledDao;
 
+    @Autowired
+    public RedisDao redisDao;
 
     @Override
     public List<Seckill> getSeckillList() {
@@ -54,8 +57,13 @@ public class SeckillServiceImpl implements ISeckillService {
 
     @Override
     public Exposer exportSeckillUrl(long seckillId) {
-        Seckill seckill = getById(seckillId);
-
+//        Seckill seckill = getById(seckillId);
+        Seckill seckill=redisDao.getSeckill(seckillId);
+        if(seckill==null){
+            seckill = getById(seckillId);
+            if(seckill!=null)
+                logger.info(redisDao.putSeckill(seckill));
+        }
         //若秒杀未开启
         Date startTime = seckill.getStartTime();
         Date endTime = seckill.getEndTime();
@@ -63,6 +71,7 @@ public class SeckillServiceImpl implements ISeckillService {
         //系统当前时间
         Date nowTime = new Date();
         if (startTime.getTime() > nowTime.getTime() || endTime.getTime() < nowTime.getTime()) {
+
             return new Exposer(false, seckillId, nowTime.getTime(), startTime.getTime(),
                     endTime.getTime());
 

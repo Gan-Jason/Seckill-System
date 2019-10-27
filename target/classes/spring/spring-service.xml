@@ -17,6 +17,11 @@
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
+    <bean id="redisDao" class="com.gan.dao.cache.RedisDao">
+        <constructor-arg name="ip" value="127.0.0.1"/>
+        <constructor-arg name="port" value="6378"/>
+    </bean>
+
     <!--配置基于注解的声明式事务
     默认使用注解来管理事务行为-->
     <tx:annotation-driven transaction-manager="transactionManager"/>
